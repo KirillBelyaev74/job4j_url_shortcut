@@ -79,8 +79,12 @@ public class SiteGenerate {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         SiteGenerate that = (SiteGenerate) o;
         return id == that.id
                 && Objects.equals(url, that.url)

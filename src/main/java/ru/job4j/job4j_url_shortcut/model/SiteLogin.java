@@ -65,8 +65,12 @@ public class SiteLogin {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         SiteLogin that = (SiteLogin) o;
         return registration == that.registration
                 && Objects.equals(login, that.login)

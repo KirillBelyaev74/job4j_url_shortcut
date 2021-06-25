@@ -15,7 +15,7 @@ import ru.job4j.job4j_url_shortcut.service.SiteLoginService;
 import ru.job4j.job4j_url_shortcut.service.SiteService;
 
 @RestController
-@RequestMapping("/registration")
+@RequestMapping("/site")
 public class SiteRegistrationController {
 
     private final SiteService siteService;
@@ -33,7 +33,7 @@ public class SiteRegistrationController {
         this.generated = generated;
     }
 
-    @PostMapping("/")
+    @PostMapping("/registration")
     public ResponseEntity<SiteLogin> registrationSite(@RequestBody Site site) {
         if (site.getUrl().contains("https://")) {
             site.setUrl(site.getUrl().replace("https://", ""));

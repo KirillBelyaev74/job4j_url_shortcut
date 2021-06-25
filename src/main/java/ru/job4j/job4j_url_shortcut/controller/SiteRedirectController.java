@@ -23,9 +23,8 @@ public class SiteRedirectController {
 
     @GetMapping("/{code}")
     public ResponseEntity<String> redirectByCode(@PathVariable String code) {
+        siteGenerateService.incrementTotalByCode(code);
         SiteGenerate result = siteGenerateService.findByCode(code);
-        result.setTotal(result.getTotal() + 1);
-        siteGenerateService.saveOrUpdate(result);
         return result != null
                 ? new ResponseEntity<>(result.getUrl(), HttpStatus.resolve(302))
                 : new ResponseEntity<>(null, HttpStatus.NOT_FOUND);

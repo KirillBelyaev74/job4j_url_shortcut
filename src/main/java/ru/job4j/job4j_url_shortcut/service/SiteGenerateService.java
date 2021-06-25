@@ -28,4 +28,8 @@ public class SiteGenerateService {
     public SiteGenerate findByCode(String code) {
         return repository.findByCode(code);
     }
+
+    public void incrementTotalByCode(String code) {
+        repository.updateTotalByCode(code);
+    }
 }
